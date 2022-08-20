@@ -1,11 +1,17 @@
+<section style="text-align: center">
+
 # signals 🚥
 A collection of wrappers and utility functions for working with AbortSignals.
 
-[![npm package version](https://img.shields.io/npm/v/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![npm package downloads](https://img.shields.io/npm/dw/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals.js "View signals on npm") [![API docs](https://img.shields.io/badge/docs-v1.0.0-informational.svg)](https://toebeann.github.io/signals "Read the documentation on Github Pages") [![Code coverage](https://img.shields.io/codecov/c/github/toebeann/signals?label=code%20coverage)](https://codecov.io/gh/toebeann/signals "View code coverage on Codecov") [![code quality](https://img.shields.io/codefactor/grade/github/toebeann/signals.svg)](https://www.codefactor.io/repository/github/toebeann/signals "Check code quality on CodeFactor")
+[![npm package version](https://img.shields.io/npm/v/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![npm package downloads](https://img.shields.io/npm/dw/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals.js "View signals on npm") [![API docs](https://img.shields.io/badge/docs-v1.1.0-informational.svg)](https://toebeann.github.io/signals "Read the documentation on Github Pages")
+
+[![Code coverage](https://img.shields.io/codecov/c/github/toebeann/signals?label=code%20coverage)](https://codecov.io/gh/toebeann/signals "View code coverage on Codecov") [![code quality](https://img.shields.io/codefactor/grade/github/toebeann/signals.svg)](https://www.codefactor.io/repository/github/toebeann/signals "Check code quality on CodeFactor") [![minzip](https://badgen.net/bundlephobia/minzip/@toebean/signals)](https://bundlephobia.com/package/@toebean/signals "View signals on Bundlephobia") [![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@toebean/signals)](https://bundlephobia.com/package/@toebean/signals "View signals on Bundlephobia")
 
 [![npm test](https://github.com/toebeann/signals/actions/workflows/npm-test.yml/badge.svg)](https://github.com/toebeann/signals/actions/workflows/npm-test.yml "View npm test on GitHub Actions") [![publish package](https://github.com/toebeann/signals/actions/workflows/publish-package.yml/badge.svg)](https://github.com/toebeann/signals/actions/workflows/publish-package.yml "View publish package on GitHub Actions") [![publish docs](https://github.com/toebeann/signals/actions/workflows/publish-docs.yml/badge.svg)](https://github.com/toebeann/signals/actions/workflows/publish-docs.yml "View publish docks on GitHub Actions")
 
 [![GitHub stars](https://img.shields.io/github/stars/toebeann/signals.svg?style=social)](https://github.com/toebeann/signals "Star signals on GitHub") [![Twitter Follow](https://img.shields.io/twitter/follow/toebean__.svg?style=social)](https://twitter.com/toebean__ "Follow @toebean__ on Twitter") [![GitHub Sponsors donation button](https://img.shields.io/badge/github-sponsor-yellow.svg)](https://github.com/sponsors/toebeann "Sponsor signals on GitHub") [![PayPal donation button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/tobeyblaber "Donate to signals with PayPal")
+
+</section>
 
 ## Table of contents
 - [signals 🚥](#signals-)
