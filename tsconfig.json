@@ -8,8 +8,7 @@
     "declarationMap": true,
     "declarationDir": "./types",
     "sourceMap": true,
-    "strictNullChecks": true,
-    "module": "es2015"
+    "strictNullChecks": true
   },
   "include": [
     "./src"
