@@ -1,11 +1,13 @@
 {
   "name": "@procedure-rpc/signals",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "title": "signals",
   "description": "A collection of wrappers and utility functions for working with AbortSignals.",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "author": "Tobey Blaber (https://github.com/toebeann)",
+  "homepage": "https://procedure-rpc.github.io/signals",
+  "repository": "github:procedure-rpc/signals",
   "funding": [
     "https://github.com/sponsors/toebeann",
     "https://paypal.me/tobeyblaber"
