@@ -14,6 +14,7 @@
     "https://paypal.me/tobeyblaber"
   ],
   "license": "MIT",
+  "sideEffects": false,
   "scripts": {
     "build": "npm run build:browser && npm run build:node && npm run build:types",
     "build:browser": "rollup ./src/index.ts -c --file ./dist/index.esm.js -m --format esm",
