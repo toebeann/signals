@@ -1,4 +1,4 @@
-<center>
+<section style="text-align: center">
 
 # signals 🚥
 A collection of wrappers and utility functions for working with AbortSignals.
@@ -11,7 +11,7 @@ A collection of wrappers and utility functions for working with AbortSignals.
 
 [![GitHub stars](https://img.shields.io/github/stars/toebeann/signals.svg?style=social)](https://github.com/toebeann/signals "Star signals on GitHub") [![Twitter Follow](https://img.shields.io/twitter/follow/toebean__.svg?style=social)](https://twitter.com/toebean__ "Follow @toebean__ on Twitter") [![GitHub Sponsors donation button](https://img.shields.io/badge/github-sponsor-yellow.svg)](https://github.com/sponsors/toebeann "Sponsor signals on GitHub") [![PayPal donation button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/tobeyblaber "Donate to signals with PayPal")
 
-</center>
+</section>
 
 ## Table of contents
 - [signals 🚥](#signals-)
