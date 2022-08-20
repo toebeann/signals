@@ -1,6 +1,6 @@
 {
   "name": "@toebean/signals",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "title": "signals",
   "description": "A collection of wrappers and utility functions for working with AbortSignals.",
   "main": "./dist/index.cjs.js",
@@ -16,10 +16,9 @@
   "license": "MIT",
   "sideEffects": false,
   "scripts": {
-    "build": "npm run build:browser && npm run build:node && npm run build:types",
+    "build": "npm run build:browser && npm run build:node",
     "build:browser": "rollup ./src/index.ts -c --file ./dist/index.esm.js -m --format esm",
     "build:node": "rollup ./src/index.ts -c --file ./dist/index.cjs.js -m --format cjs",
-    "build:types": "tsc",
     "lint": "eslint . --ext .ts",
     "test": "mocha -r ts-node/register -r source-map-support/register ./test/**/*.ts",
     "test:coverage": "npm run build & c8 npm test",

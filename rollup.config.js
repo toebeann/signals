@@ -4,7 +4,7 @@ import { terser } from 'rollup-plugin-terser';
 export default {
     plugins: [
         ts({
-            "browserslist": ["> 0.25%", "not dead"]
+            browserslist: ["> 0.25%", "not dead"]
         }),
         terser({
             format: {
