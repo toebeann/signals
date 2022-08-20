@@ -2,7 +2,7 @@
   "name": "@procedure-rpc/signals",
   "version": "0.1.0",
   "title": "signals",
-  "description": "A collection of wrappers around native AbortSignals with added functionality.",
+  "description": "A collection of wrappers and utility functions for working with AbortSignals.",
   "main": "./dist/index.js",
   "types": "./types/index.d.ts",
   "author": "Tobey Blaber (https://github.com/toebeann)",
@@ -46,6 +46,13 @@
     "signal",
     "abort",
     "aggregate",
-    "timeout"
+    "timeout",
+    "AggregateSignal",
+    "anySignal",
+    "any-signal",
+    "TimeoutSignal",
+    "timeout-signal",
+    "isSignal",
+    "isAbortSignal"
   ]
 }
