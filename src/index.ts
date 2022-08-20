@@ -1,7 +1,5 @@
 /**
  * A helper class to create an {@link AbortSignal} which aborts as soon as any of the signals passed to its constructor do.
- * @internal
- * @remarks Intended for internal use; may not be exported in future - possibly will be moved to its own package.
  */
 export class AggregateSignal {
     #abortedSignal?: AbortSignal;
@@ -43,8 +41,6 @@ export class AggregateSignal {
 
 /**
  * A helper class to create an {@link AbortSignal} based on a timeout.
- * @internal
- * @remarks Intended for internal use; may not be exported in future - possibly will be moved to its own package.
  */
 export class TimeoutSignal {
     /** The underlying {@link AbortSignal}. */
@@ -73,8 +69,6 @@ export class TimeoutSignal {
  * Type guard for determining whether a given {@link object} is an {@link AbortSignal} instance.
  * @param {unknown} object The object.
  * @returns {object is AbortSignal} `true` if {@link object} is determined to be an {@link AbortSignal}, otherwise `false`.
- * @internal
- * @remarks Intended for internal use; may not be exported in future.
  */
 export function isAbortSignal(object: unknown): object is AbortSignal {
     return object instanceof AbortSignal;
@@ -82,21 +76,16 @@ export function isAbortSignal(object: unknown): object is AbortSignal {
 
 /**
  * A helpful interface to allow use of {@link AbortSignal AbortSignal's} {@link EventTarget} interface when TypeScript hates us.
- * @internal
- * @remarks Intended for internal use; may not be exported in future.
  */
-export interface Signal {
+export interface Signal extends AbortSignal {
     addEventListener: (event: 'abort', callback: () => void) => void;
     removeEventListener: (event: 'abort') => void;
-    readonly aborted: boolean;
 }
 
 /**
  * Type guard for determining whether a given {@link object} conforms to the {@link Signal} interface.
  * @param {unknown} object The object.
  * @returns {object is Signal} `true` if {@link object} conforms to the {@link Signal} interface, otherwise `false`.
- * @internal
- * @remarks Intended for internal use; may not be exported in future.
  */
 export function isSignal(object: unknown): object is Signal {
     return isAbortSignal(object) && 'addEventListener' in object && 'removeEventListener' in object
