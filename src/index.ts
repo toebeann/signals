@@ -2,13 +2,12 @@
  * A helper class to create an {@link AbortSignal} which aborts as soon as any of the signals passed to its constructor do.
  */
 export class AggregateSignal {
-    #abortedSignal?: AbortSignal;
 
     /** The aggregate {@link AbortSignal}. */
-    public readonly signal?: AbortSignal;
+    readonly signal?: AbortSignal;
 
     /** The first {@link AbortSignal} of those passed in to have aborted. */
-    get abortedSignal() { return this.#abortedSignal }
+    abortedSignal?: AbortSignal;
 
     /**
      * Initializes a new {@link AggregateSignal}.
@@ -18,9 +17,9 @@ export class AggregateSignal {
         const signals = abortSignals.filter(isSignal);
 
         if (signals.length === 1) {
-            this.#abortedSignal = this.signal = signals[0];
+            this.abortedSignal = this.signal = signals[0];
         } else if (signals.some(s => s.aborted)) {
-            this.#abortedSignal = this.signal = signals.filter(s => s.aborted)[0];
+            this.abortedSignal = this.signal = signals.filter(s => s.aborted)[0];
         } else if (signals.length > 1) {
             const ac = new AbortController();
             this.signal = ac.signal;
@@ -31,7 +30,7 @@ export class AggregateSignal {
                         signal.removeEventListener('abort');
                     }
 
-                    this.#abortedSignal = signal;
+                    this.abortedSignal = signal;
                     ac.abort();
                 });
             }
