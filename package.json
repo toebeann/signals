@@ -48,11 +48,18 @@
     "aggregate",
     "timeout",
     "AggregateSignal",
+    "aggregate signal",
     "anySignal",
     "any-signal",
+    "any signal",
     "TimeoutSignal",
     "timeout-signal",
+    "timeout signal",
     "isSignal",
-    "isAbortSignal"
+    "is-signal",
+    "is signal",
+    "isAbortSignal",
+    "is-abort-signal",
+    "is abort signal"
   ]
 }
