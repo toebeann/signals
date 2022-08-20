@@ -6,7 +6,6 @@
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
   "types": "./types/index.esm.d.ts",
-  "type": "module",
   "author": "Tobey Blaber (https://github.com/toebeann)",
   "homepage": "https://toebeann.github.io/signals",
   "repository": "github:toebeann/signals",
