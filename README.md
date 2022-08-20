@@ -1,4 +1,4 @@
-# signals
+# signals 🚥
 A collection of wrappers and utility functions for working with AbortSignals.
 
 [![npm package version](https://img.shields.io/npm/v/@procedure-rpc/signals.svg)](https://npmjs.org/package/@procedure-rpc/signals "View signals on npm") [![npm package downloads](https://img.shields.io/npm/dw/@procedure-rpc/signals.svg)](https://npmjs.org/package/@procedure-rpc/signals.js "View signals on npm") [![API docs](https://img.shields.io/badge/docs-v0.1.1-informational.svg)](https://procedure-rpc.github.io/signals "Read the documentation on Github Pages") [![Code coverage](https://img.shields.io/codecov/c/github/procedure-rpc/signals?label=code%20coverage)](https://codecov.io/gh/procedure-rpc/signals "View code coverage on Codecov") [![code quality](https://img.shields.io/codefactor/grade/github/procedure-rpc/signals.svg)](https://www.codefactor.io/repository/github/procedure-rpc/signals "Check code quality on CodeFactor")
@@ -8,7 +8,7 @@ A collection of wrappers and utility functions for working with AbortSignals.
 [![GitHub stars](https://img.shields.io/github/stars/procedure-rpc/signals.svg?style=social)](https://github.com/procedure-rpc/signals "Star signals on GitHub") [![Twitter Follow](https://img.shields.io/twitter/follow/toebean__.svg?style=social)](https://twitter.com/toebean__ "Follow @toebean__ on Twitter") [![GitHub Sponsors donation button](https://img.shields.io/badge/github-sponsor-yellow.svg)](https://github.com/sponsors/toebeann "Sponsor signals on GitHub") [![PayPal donation button](https://img.shields.io/badge/paypal-donate-yellow.svg)](https://paypal.me/tobeyblaber "Donate to signals with PayPal")
 
 ## Table of contents
-- [signals](#signals)
+- [signals 🚥](#signals-)
   - [Table of contents](#table-of-contents)
   - [Install](#install)
     - [npm](#npm)
