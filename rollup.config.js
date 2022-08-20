@@ -1,9 +1,22 @@
-import ts from 'rollup-plugin-ts';
+import typescript from 'rollup-plugin-ts';
 import { terser } from 'rollup-plugin-terser';
+import resolve from '@rollup/plugin-node-resolve';
+import nodePolyfills from 'rollup-plugin-polyfill-node';
 
 export default {
+    input: './src/index.ts',
+    output: [{
+        sourcemap: true,
+        format: 'esm',
+        file: './dist/index.esm.js'
+    },
+    {
+        sourcemap: true,
+        format: 'cjs',
+        file: './dist/index.cjs.js'
+    }],
     plugins: [
-        ts({
+        typescript({
             browserslist: ["> 0.25%", "not dead"]
         }),
         terser({
@@ -11,6 +24,11 @@ export default {
                 comments: false
             },
             compress: false
-        })
+        }),
+        resolve({
+            modulesOnly: true,
+            browser: true
+        }),
+        nodePolyfills()
     ]
 };
