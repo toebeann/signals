@@ -38,7 +38,7 @@ A collection of wrappers and utility functions for working with AbortSignals.
 Combines several `AbortSignal` instances into a signal which will be aborted as soon as any of the underlying signals are.
 
 ```js
-const { AggregateSignal } = require('@toebean/signals');
+import { AggregateSignal } from '@toebean/signals';
 
 const ac = new AbortController();
 const aggregateSignal = new AggregateSignal(ac.signal, someOtherSignal);
@@ -59,7 +59,7 @@ switch (aggregateSignal.abortedSignal) {
 Creates an `AbortSignal` which will automatically timeout after a given number of milliseconds. Based on native `timeout`.
 
 ```js
-const { TimeoutSignal } = require('@toebean/signals');
+import { AggregateSignal } from '@toebean/signals';
 
 const timeoutSignal = new TimeoutSignal(200); // creates an AbortSignal which will abort in 200ms
 
