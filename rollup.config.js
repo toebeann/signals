@@ -8,12 +8,12 @@ export default {
     output: [{
         sourcemap: true,
         format: 'esm',
-        file: './dist/index.esm.js'
+        file: './dist/index.mjs'
     },
     {
         sourcemap: true,
         format: 'cjs',
-        file: './dist/index.cjs.js'
+        file: './dist/index.cjs'
     }],
     plugins: [
         typescript({
