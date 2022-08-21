@@ -1,0 +1,27 @@
+{
+  "preset": "ts-jest/presets/default-esm",
+  "testEnvironment": "node",
+  "globals": {
+    "ts-jest": {
+      "useESM": true
+    }
+  },
+  "moduleNameMapper": {
+    "^(\\.{1,2}/.*)\\.js$": "$1"
+  },
+  "coverageReporters": [
+    "html",
+    "text",
+    "cobertura",
+    "json",
+    "lcovonly"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "statements": 90,
+      "branches": 90,
+      "functions": 90,
+      "lines": 90
+    }
+  }
+}
