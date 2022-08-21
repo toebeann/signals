@@ -1,6 +1,6 @@
 {
   "name": "@toebean/signals",
-  "version": "2.3.0-alpha.4",
+  "version": "2.3.0",
   "title": "signals",
   "description": "A collection of wrappers and utility functions for working with AbortSignals.",
   "main": "./dist/index.cjs",
@@ -31,6 +31,7 @@
     "@types/jest": "^28.1.7",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
+    "@yelo/rollup-node-external": "^1.0.1",
     "c8": "^7.12.0",
     "chai": "^4.3.6",
     "chai-spies": "^1.0.0",
