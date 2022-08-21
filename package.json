@@ -1,6 +1,6 @@
 {
   "name": "@toebean/signals",
-  "version": "2.3.2",
+  "version": "2.3.3",
   "title": "signals",
   "description": "A collection of wrappers and utility functions for working with AbortSignals.",
   "main": "./dist/index.cjs",
@@ -8,7 +8,10 @@
   "types": "./types/index.d.mts",
   "author": "Tobey Blaber (https://github.com/toebeann)",
   "homepage": "https://toebeann.github.io/signals",
-  "repository": "github:toebeann/signals",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toebeann/signals.git"
+  },
   "funding": [
     "https://github.com/sponsors/toebeann",
     "https://paypal.me/tobeyblaber"

@@ -3,7 +3,7 @@
 # signals 🚥
 A collection of wrappers and utility functions for working with AbortSignals.
 
-[![npm package version](https://img.shields.io/npm/v/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![npm package downloads](https://img.shields.io/npm/dw/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals.js "View signals on npm") [![API docs](https://img.shields.io/badge/docs-v2.3.2-informational.svg)](https://toebeann.github.io/signals "Read the documentation on Github Pages")
+[![npm package version](https://img.shields.io/npm/v/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![npm package downloads](https://img.shields.io/npm/dw/@toebean/signals.svg)](https://npmjs.org/package/@toebean/signals.js "View signals on npm") [![API docs](https://img.shields.io/badge/docs-v2.3.3-informational.svg)](https://toebeann.github.io/signals "Read the documentation on Github Pages")
 
 [![Code coverage](https://img.shields.io/codecov/c/github/toebeann/signals?label=code%20coverage)](https://codecov.io/gh/toebeann/signals "View code coverage on Codecov") [![code quality](https://img.shields.io/codefactor/grade/github/toebeann/signals.svg)](https://www.codefactor.io/repository/github/toebeann/signals "Check code quality on CodeFactor") [![minzip](https://img.shields.io/bundlephobia/minzip/@toebean/signals.svg)](https://bundlephobia.com/package/@toebean/signals "View signals on Bundlephobia") [![tree-shaking](https://badgen.net/bundlephobia/tree-shaking/@toebean/signals?=)](https://bundlephobia.com/package/@toebean/signals "View signals on Bundlephobia")
 
