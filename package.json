@@ -1,6 +1,6 @@
 {
   "name": "@toebean/signals",
-  "version": "2.3.0-alpha.3",
+  "version": "2.3.0-alpha.4",
   "title": "signals",
   "description": "A collection of wrappers and utility functions for working with AbortSignals.",
   "main": "./dist/index.cjs",
@@ -47,6 +47,7 @@
   },
   "files": [
     "dist/**/*.*js",
+    "dist/**/*.*js.map",
     "types/**/*.d.*ts",
     "types/**/*.d.*ts.map"
   ],
