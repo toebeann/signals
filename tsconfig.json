@@ -4,11 +4,11 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "declaration": true,
-    "emitDeclarationOnly": true,
     "declarationMap": true,
     "declarationDir": "./types",
     "sourceMap": true,
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "isolatedModules": true
   },
   "include": [
     "./src"
