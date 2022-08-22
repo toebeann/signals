@@ -72,5 +72,13 @@
     "isAbortSignal",
     "is-abort-signal",
     "is abort signal"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "os": [
+    "win32",
+    "linux",
+    "darwin"
   ]
 }
