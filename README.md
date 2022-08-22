@@ -30,7 +30,7 @@ A collection of wrappers and utility functions for working with AbortSignals.
 ## Install
 
 ### [npm](https://www.npmjs.com/package/@toebean/signals "npm is a package manager for JavaScript")
-`npm install @toebean/signals`
+`npm i @toebean/signals`
 
 ## Usage
 
