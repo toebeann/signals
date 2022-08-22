@@ -93,7 +93,7 @@ export interface Signal extends AbortSignal {
     /** 
      * Adds a listener to a named event.
      * @param {'abort'} event Name of the event.
-     * @param listener The listener.
+     * @param {() => void} listener The listener.
      */
     addEventListener: (event: 'abort', listener: () => void) => void;
     /** Removes a listener from a named event.
