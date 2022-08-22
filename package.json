@@ -12,6 +12,9 @@
     "type": "git",
     "url": "https://github.com/toebeann/signals.git"
   },
+  "bugs": {
+    "url": "https://github.com/toebeann/signals/issues"
+  },
   "funding": [
     "https://github.com/sponsors/toebeann",
     "https://paypal.me/tobeyblaber"
