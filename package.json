@@ -25,8 +25,8 @@
   "scripts": {
     "build": "rollup -c",
     "prebuild": "npm run format",
-    "format": "prettier -w .",
-    "format:check": "prettier -c .",
+    "format": "prettier -w . --ignore-path .gitignore",
+    "format:check": "prettier -c . --ignore-path .gitignore",
     "test": "jest",
     "pretest": "npm run format:check -- --end-of-line auto",
     "docs": "typedoc",
