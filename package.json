@@ -28,7 +28,7 @@
     "format": "prettier -w . --ignore-path .gitignore",
     "format:check": "prettier -c . --ignore-path .gitignore",
     "test": "jest",
-    "pretest": "npm run format:check -- --end-of-line auto",
+    "pretest": "npm run format:check",
     "docs": "typedoc",
     "predocs": "npm run format"
   },
