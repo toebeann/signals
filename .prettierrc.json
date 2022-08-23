@@ -3,7 +3,8 @@
     {
       "files": ["*.*ts?(x)", "*.js?(x)"],
       "options": {
-        "tabWidth": 4
+        "tabWidth": 4,
+        "singleQuote": true
       }
     }
   ]

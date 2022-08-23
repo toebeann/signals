@@ -34,9 +34,9 @@ export class AggregateSignal {
             this.signal = ac.signal;
 
             for (const signal of signals) {
-                signal.addEventListener("abort", () => {
+                signal.addEventListener('abort', () => {
                     for (const signal of signals) {
-                        signal.removeEventListener("abort");
+                        signal.removeEventListener('abort');
                     }
 
                     this.abortedSignal = signal;
@@ -96,11 +96,11 @@ export interface Signal extends AbortSignal {
      * @param {'abort'} event Name of the event.
      * @param {() => void} listener The listener.
      */
-    addEventListener: (event: "abort", listener: () => void) => void;
+    addEventListener: (event: 'abort', listener: () => void) => void;
     /** Removes a listener from a named event.
      * @param {'abort'} event Name of the event.
      */
-    removeEventListener: (event: "abort") => void;
+    removeEventListener: (event: 'abort') => void;
 }
 
 /**
@@ -111,9 +111,9 @@ export interface Signal extends AbortSignal {
 export function isSignal(object: unknown): object is Signal {
     return (
         isAbortSignal(object) &&
-        "addEventListener" in object &&
-        "removeEventListener" in object &&
-        typeof (<Signal>object).addEventListener === "function" &&
-        typeof (<Signal>object).removeEventListener === "function"
+        'addEventListener' in object &&
+        'removeEventListener' in object &&
+        typeof (<Signal>object).addEventListener === 'function' &&
+        typeof (<Signal>object).removeEventListener === 'function'
     );
 }
