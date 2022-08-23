@@ -9,13 +9,7 @@
   "moduleNameMapper": {
     "^(\\.{1,2}/.*)\\.js$": "$1"
   },
-  "coverageReporters": [
-    "html",
-    "text",
-    "cobertura",
-    "json",
-    "lcovonly"
-  ],
+  "coverageReporters": ["html", "text", "cobertura", "json", "lcovonly"],
   "coverageThreshold": {
     "global": {
       "statements": 90,

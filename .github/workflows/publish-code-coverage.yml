@@ -5,8 +5,8 @@ on:
     branches: ["main"]
     paths:
       [
-        "**.ts",
-        "jest.config.js*",
+        "*.ts",
+        "jest.config.js?(on)",
         ".github/workflows/publish-code-coverage.yml",
       ]
   workflow_dispatch:
