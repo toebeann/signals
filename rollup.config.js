@@ -6,31 +6,33 @@ import externals from '@yelo/rollup-node-external';
 
 export default {
     input: './src/index.ts',
-    output: [{
-        sourcemap: true,
-        format: 'esm',
-        file: './dist/index.mjs'
-    },
-    {
-        sourcemap: true,
-        format: 'cjs',
-        file: './dist/index.cjs'
-    }],
+    output: [
+        {
+            sourcemap: true,
+            format: 'esm',
+            file: './dist/index.mjs',
+        },
+        {
+            sourcemap: true,
+            format: 'cjs',
+            file: './dist/index.cjs',
+        },
+    ],
     external: externals(),
     plugins: [
         typescript({
-            browserslist: ["> 0.25%", "not dead"]
+            browserslist: ['> 0.25%', 'not dead'],
         }),
         terser({
             format: {
-                comments: false
+                comments: false,
             },
-            compress: false
+            compress: false,
         }),
         resolve({
             modulesOnly: true,
-            browser: true
+            browser: true,
         }),
-        nodePolyfills()
-    ]
+        nodePolyfills(),
+    ],
 };

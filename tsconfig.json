@@ -11,7 +11,5 @@
     "isolatedModules": true,
     "module": "es6"
   },
-  "include": [
-    "./src"
-  ]
+  "include": ["./src"]
 }

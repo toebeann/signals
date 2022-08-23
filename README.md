@@ -1,6 +1,7 @@
 <center>
 
 # signals 🚥
+
 A collection of wrappers and utility functions for working with AbortSignals.
 
 [![npm package version](https://img.shields.io/npm/v/@toebean/signals.svg?logo=npm&label&labelColor=222&style=flat-square)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![npm package downloads](https://img.shields.io/npm/dw/@toebean/signals.svg?logo=npm&labelColor=222&style=flat-square)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![typedocs](https://img.shields.io/badge/docs-informational.svg?logo=typescript&labelColor=222&style=flat-square)](https://toebeann.github.io/signals "Read the documentation on Github Pages") [![license](https://img.shields.io/github/license/toebeann/signals.svg?color=informational&labelColor=222&style=flat-square)](https://github.com/toebeann/signals/blob/main/LICENSE "View the license on GitHub")
@@ -14,6 +15,7 @@ A collection of wrappers and utility functions for working with AbortSignals.
 </center>
 
 ## Table of contents
+
 - [signals 🚥](#signals-)
   - [Table of contents](#table-of-contents)
   - [Install](#install)
@@ -30,15 +32,17 @@ A collection of wrappers and utility functions for working with AbortSignals.
 ## Install
 
 ### [npm](https://www.npmjs.com/package/@toebean/signals "npm is a package manager for JavaScript")
+
 `npm i @toebean/signals`
 
 ## Usage
 
 ### AggregateSignal
+
 Combines several `AbortSignal` instances into a signal which will be aborted as soon as any of the given signals are.
 
 ```js
-import { AggregateSignal } from '@toebean/signals';
+import { AggregateSignal } from "@toebean/signals";
 
 const ac = new AbortController();
 const aggregateSignal = new AggregateSignal(ac.signal, someOtherSignal);
@@ -48,18 +52,19 @@ await doSomeAbortableAction({ signal: aggregateSignal.signal });
 
 // determining which of the original signals was aborted first:
 switch (aggregateSignal.abortedSignal) {
-    case ac.signal:
-        // do stuff
-        break;
-    // etc...
+  case ac.signal:
+    // do stuff
+    break;
+  // etc...
 }
 ```
 
 ### TimeoutSignal
+
 Creates an `AbortSignal` which will timeout after a given number of milliseconds. Based on native `timeout`.
 
 ```js
-import { AggregateSignal } from '@toebean/signals';
+import { AggregateSignal } from "@toebean/signals";
 
 const timeoutSignal = new TimeoutSignal(200); // creates an AbortSignal which will abort in 200ms
 
@@ -71,35 +76,39 @@ clearTimeout(timeoutSignal.timeout);
 ```
 
 ### isAbortSignal
+
 A TypeScript type guard for checking whether a given object is an `AbortSignal`.
 
 ```ts
-import { isAbortSignal } from '@toebean/signals';
+import { isAbortSignal } from "@toebean/signals";
 
 if (isAbortSignal(someObject)) {
-    // within this block, someObject is typed as an AbortSignal
-    console.log(someObejct.aborted);
+  // within this block, someObject is typed as an AbortSignal
+  console.log(someObejct.aborted);
 }
 ```
 
 ### isSignal
-A TypeScript type guard for checking whether a given object is an `AbortSignal` *and* conforms to a minimal `EventTarget` interface. Useful for when TypeScript hates us (i.e. does not yet have support for `AbortSignal`'s `EventTarget` interface).
+
+A TypeScript type guard for checking whether a given object is an `AbortSignal` _and_ conforms to a minimal `EventTarget` interface. Useful for when TypeScript hates us (i.e. does not yet have support for `AbortSignal`'s `EventTarget` interface).
 
 ```ts
-import { isSignal } from '@toebean/signals';
+import { isSignal } from "@toebean/signals";
 
 if (isSignal(someObject)) {
-    // within this block, someObject is typed as a Signal (which extends AbortSignal)
-    someObject.addEventListener('abort', () => {
-        // ...
-    });
+  // within this block, someObject is typed as a Signal (which extends AbortSignal)
+  someObject.addEventListener("abort", () => {
+    // ...
+  });
 }
 ```
 
 ## API reference
+
 The full API reference for signals is [available on GitHub Pages](https://toebeann.github.io/signals).
 
 ### Quick links
+
 - [AggregateSignal](https://toebeann.github.io/signals/classes/AggregateSignal.html)
 - [TimeoutSignal](https://toebeann.github.io/signals/classes/TimeoutSignal.html)
 - [isAbortSignal](https://toebeann.github.io/signals/functions/isAbortSignal.html)
@@ -107,4 +116,5 @@ The full API reference for signals is [available on GitHub Pages](https://toebea
 - [Signal](https://toebeann.github.io/signals/interfaces/Signal.html)
 
 ## License
+
 signals is licensed under [MIT](https://github.com/toebeann/signals/blob/main/LICENSE) © 2022 Tobey Blaber.

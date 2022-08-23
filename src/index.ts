@@ -2,10 +2,9 @@
  * A helper class to create an [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) which will abort when any of the signals passed to its constructor do.
  */
 export class AggregateSignal {
-
-    /** 
+    /**
      * The aggregate [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal).
-     * 
+     *
      * @remarks
      * If only a single valid [AbortSignal](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) was passed, it will be that signal.
      * If any of the signals passed was already aborted, it will be the first match in the array.
@@ -26,8 +25,10 @@ export class AggregateSignal {
 
         if (signals.length === 1) {
             this.abortedSignal = this.signal = signals[0];
-        } else if (signals.some(s => s.aborted)) {
-            this.abortedSignal = this.signal = signals.filter(s => s.aborted)[0];
+        } else if (signals.some((s) => s.aborted)) {
+            this.abortedSignal = this.signal = signals.filter(
+                (s) => s.aborted
+            )[0];
         } else if (signals.length > 1) {
             const ac = new AbortController();
             this.signal = ac.signal;
@@ -90,7 +91,7 @@ export function isAbortSignal(object: unknown): object is AbortSignal {
  * [EventTarget](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) interface when TypeScript hates us.
  */
 export interface Signal extends AbortSignal {
-    /** 
+    /**
      * Adds a listener to a named event.
      * @param {'abort'} event Name of the event.
      * @param {() => void} listener The listener.
@@ -108,6 +109,11 @@ export interface Signal extends AbortSignal {
  * @returns {object is Signal} `true` if the object conforms to the {@link Signal} interface, otherwise `false`.
  */
 export function isSignal(object: unknown): object is Signal {
-    return isAbortSignal(object) && 'addEventListener' in object && 'removeEventListener' in object
-        && typeof (<Signal>object).addEventListener === 'function' && typeof (<Signal>object).removeEventListener === 'function';
+    return (
+        isAbortSignal(object) &&
+        'addEventListener' in object &&
+        'removeEventListener' in object &&
+        typeof (<Signal>object).addEventListener === 'function' &&
+        typeof (<Signal>object).removeEventListener === 'function'
+    );
 }

@@ -5,8 +5,8 @@ on:
     branches: ["main"]
     paths:
       [
-        "**.ts",
-        "jest.config.js*",
+        "*.ts",
+        "jest.config.js?(on)",
         "package-lock.json",
         ".github/workflows/npm-test.yml",
       ]
@@ -14,8 +14,8 @@ on:
     branches: ["main"]
     paths:
       [
-        "**.ts",
-        "jest.config.js*",
+        "*.ts",
+        "jest.config.js?(on)",
         "package-lock.json",
         ".github/workflows/npm-test.yml",
       ]
