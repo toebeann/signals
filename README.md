@@ -33,7 +33,9 @@ A collection of wrappers and utility functions for working with AbortSignals.
 
 ### [npm](https://www.npmjs.com/package/@toebean/signals "npm is a package manager for JavaScript")
 
-`npm i @toebean/signals`
+```shell
+npm i @toebean/signals
+```
 
 ## Usage
 
