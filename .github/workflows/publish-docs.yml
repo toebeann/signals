@@ -6,42 +6,22 @@ on:
   workflow_dispatch:
 
 jobs:
-  get-docs:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout gh-pages
-        uses: actions/checkout@v3
-        with:
-          ref: gh-pages
-
-      - name: archive existing docs
-        run: tar -cvzf docs.tar.gz ./
-
-      - name: Upload docs artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: docs
-          path: docs.tar
-
   deploy-docs:
-    needs: get-docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Retrieve existing docs archive
-        uses: actions/download-artifact@v3
+      - name: Retrieve existing docs from gh-pages
+        uses: actions/checkout@v3
         with:
-          name: docs
+          ref: gh-pages
+          path: "./docs"
 
-      - name: Decompress docs
-        run: |
-          mkdir -p ./docs
-          tar -xzf docs.tar.gz -C ./docs
-
-      - name: Discard docs.tar
-        run: rm docs.tar
+      - name: List all files to check and exit
+      - run: |
+          ls -lf -R
+          exit 1
 
       - name: Setup node.js @ 16
         uses: actions/setup-node@v3
