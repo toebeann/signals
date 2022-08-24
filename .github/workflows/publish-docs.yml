@@ -35,7 +35,9 @@ jobs:
           name: docs
 
       - name: Decompress docs
-        run: tar -xzf docs.tar.gz -C ./docs
+        run: |
+          mkdir -p ./docs
+          tar -xzf docs.tar.gz -C ./docs
 
       - name: Discard docs.tar
         run: rm docs.tar
