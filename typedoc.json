@@ -1,5 +1,3 @@
 {
-  "exclude": "**/*+(.spec|.test).ts",
-  "entryPoints": "src",
-  "out": "docs"
+  "entryPoints": "src"
 }
