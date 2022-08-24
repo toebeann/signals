@@ -19,7 +19,7 @@ jobs:
           path: "./docs"
 
       - name: List all files to check and exit
-      - run: |
+        run: |
           ls -lf -R
           exit 1
 
