@@ -9,12 +9,12 @@ jobs:
   deploy-docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout docs
+      - name: Checkout gh-pages
         uses: actions/checkout@v3
         with:
           ref: gh-pages
 
-      - name: Checkout repository
+      - name: Checkout main
         uses: actions/checkout@v3
 
       - name: List files and exit
