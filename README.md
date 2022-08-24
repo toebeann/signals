@@ -111,11 +111,11 @@ The full API reference for signals is [available on GitHub Pages](https://toebea
 
 ### Quick links
 
-- [AggregateSignal](https://toebeann.github.io/signals/classes/AggregateSignal.html)
-- [TimeoutSignal](https://toebeann.github.io/signals/classes/TimeoutSignal.html)
-- [isAbortSignal](https://toebeann.github.io/signals/functions/isAbortSignal.html)
-- [isSignal](https://toebeann.github.io/signals/functions/isSignal.html)
-- [Signal](https://toebeann.github.io/signals/interfaces/Signal.html)
+- [AggregateSignal](https://toebeann.github.io/signals/stable/classes/AggregateSignal.html)
+- [TimeoutSignal](https://toebeann.github.io/signals/stable/classes/TimeoutSignal.html)
+- [isAbortSignal](https://toebeann.github.io/signals/stable/functions/isAbortSignal.html)
+- [isSignal](https://toebeann.github.io/signals/stable/functions/isSignal.html)
+- [Signal](https://toebeann.github.io/signals/stable/interfaces/Signal.html)
 
 ## License
 
