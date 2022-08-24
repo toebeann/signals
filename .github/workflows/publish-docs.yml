@@ -9,13 +9,19 @@ jobs:
   deploy-docs:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+
       - name: Checkout gh-pages
         uses: actions/checkout@v3
         with:
           ref: gh-pages
+          path: './gh-pages'
 
-      - name: Checkout main
-        uses: actions/checkout@v3
+      - name: Fix folder structure
+        run: |
+            mv gh-pages/docs docs
+            rm -rf gh-pages
 
       - name: List files and exit
         run: |
