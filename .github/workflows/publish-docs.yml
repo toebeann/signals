@@ -23,11 +23,6 @@ jobs:
             mv gh-pages/docs docs
             rm -rf gh-pages
 
-      - name: List files and exit
-        run: |
-            ls -lf -R
-            exit 1
-
       - name: Setup node.js @ 16
         uses: actions/setup-node@v3
         with:
