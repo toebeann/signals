@@ -16,12 +16,12 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: gh-pages
-          path: './gh-pages'
+          path: "./gh-pages"
 
       - name: Fix folder structure
         run: |
-            mv gh-pages/docs docs
-            rm -rf gh-pages
+          mv gh-pages/docs docs
+          rm -rf gh-pages
 
       - name: Setup node.js @ 16
         uses: actions/setup-node@v3
