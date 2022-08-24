@@ -16,7 +16,7 @@ jobs:
         uses: Bhacaz/checkout-files@v2
         with:
           branch: gh-pages
-          files: ./docs
+          files: docs
 
       - name: List files and exit
         run: |
