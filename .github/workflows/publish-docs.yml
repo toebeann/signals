@@ -15,7 +15,7 @@ jobs:
           ref: gh-pages
 
       - name: archive existing docs
-        run: tar -cvf docs.tar ./
+        run: tar -cvzf docs.tar.gz ./
 
       - name: Upload docs artifact
         uses: actions/upload-artifact@v3
@@ -35,7 +35,7 @@ jobs:
           name: docs
 
       - name: Decompress docs
-        run: tar -xf docs.tar -C ./docs
+        run: tar -xzf docs.tar.gz -C ./docs
 
       - name: Discard docs.tar
         run: rm docs.tar
