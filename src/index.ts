@@ -67,7 +67,7 @@ export class TimeoutSignal {
      * [Number.MAX_SAFE_INTEGER](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER) inclusive.
      */
     constructor(timeout?: number) {
-        if (timeout !== undefined && isFinite(timeout) && !isNaN(timeout)) {
+        if (timeout && isFinite(timeout) && !isNaN(timeout)) {
             timeout = Math.min(Math.max(timeout, 0), Number.MAX_SAFE_INTEGER); // clamp the timeout to a sensible range
 
             const ac = new AbortController();
