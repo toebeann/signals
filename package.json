@@ -15,7 +15,17 @@
   "bugs": {
     "url": "https://github.com/toebeann/signals/issues"
   },
-  "funding": "https://github.com/toebeann/signals?sponsor=1",
+  "funding": [
+    "https://github.com/toebeann/signals?sponsor=1",
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/toebeann"
+    },
+    {
+      "type": "individual",
+      "url": "https://paypal.me/tobeyblaber"
+    }
+  ],
   "license": "MIT",
   "type": "module",
   "sideEffects": false,
