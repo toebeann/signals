@@ -37,7 +37,11 @@
     "test": "jest",
     "posttest": "npm run format:check",
     "docs": "typedoc",
-    "predocs": "npm run format"
+    "predocs": "npm run format",
+    "postdocs": "npm run docs:purge",
+    "docs:purge": "tpv purge -y --patch 3",
+    "postdocs:purge": "npm run docs:sync",
+    "docs:sync": "tpv sync -y --symlinks"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^14.1.0",
@@ -56,7 +60,8 @@
     "rollup-plugin-ts": "^3.0.2",
     "ts-jest": "^28.0.8",
     "typedoc": "^0.23.14",
-    "typedoc-plugin-versions": "^0.2.0",
+    "typedoc-plugin-versions": "^0.2.1",
+    "typedoc-plugin-versions-cli": "^0.1.4",
     "typescript": "^4.7.4"
   },
   "files": [
