@@ -1,25 +1,24 @@
 /**
- * A helper class to create an {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal}
- * which will abort when any of the signals passed to its constructor do.
+ * A helper class to create an {@link !AbortSignal AbortSignal} which will abort when any of the signals passed to its constructor do.
  */
 export class AggregateSignal {
     /**
-     * The aggregate {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal}.
+     * The aggregate {@link !AbortSignal AbortSignal}.
      *
      * @remarks
-     * If only a single valid {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal} was passed, it will be that signal.
+     * If only a single valid {@link !AbortSignal AbortSignal} was passed, it will be that signal.
      * If any of the signals passed was already aborted, it will be the first match in the array.
-     * If no valid {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignals} were passed,
-     * it will be {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined undefined}.
+     * If no valid {@link !AbortSignal AbortSignals} were passed,
+     * it will be {@link !undefined `undefined`}.
      */
     readonly signal?: AbortSignal;
 
-    /** The first {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal} of those passed in to have aborted. */
+    /** The first {@link !AbortSignal AbortSignal} of those passed in to have aborted. */
     abortedSignal?: AbortSignal;
 
     /**
      * Initializes a new {@link AggregateSignal}.
-     * @param {(AbortSignal | undefined)[]} abortSignals The {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignals} to aggregate.
+     * @param {(AbortSignal | undefined)[]} abortSignals The {@link !AbortSignal AbortSignals} to aggregate.
      */
     constructor(...abortSignals: (AbortSignal | undefined)[]) {
         const signals = abortSignals.filter(isSignal);
@@ -49,23 +48,20 @@ export class AggregateSignal {
 }
 
 /**
- * A helper class to create an {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal} based on a timeout.
+ * A helper class to create an {@link !AbortSignal AbortSignal} based on {@link !setTimeout setTimeout}.
  */
 export class TimeoutSignal {
-    /** The underlying {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal}. */
+    /** The underlying {@link !AbortSignal AbortSignal}. */
     public readonly signal?: AbortSignal;
-    /** If defined, the ID of a timeout which will signal abortion. */
+    /** If defined, the {@link https://developer.mozilla.org/en-US/docs/Web/API/setTimeout#return_value timeoutID} of a timer which will signal abortion. */
     public readonly timeout?: ReturnType<typeof setTimeout>;
 
     /**
      * Initializes a new {@link TimeoutSignal}.
      * @param {number} [timeout] The number of milliseconds after which the {@link TimeoutSignal.signal signal} should be aborted.
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined undefined},
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity infinite}
-     * or {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN NaN} values
-     * will result in {@link TimeoutSignal.signal signal} being undefined.
-     * Finite values will be clamped between `0` and
-     * {@link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/MAX_SAFE_INTEGER Number.MAX_SAFE_INTEGER} inclusive.
+     * {@link !undefined `undefined`}, {@link !Infinity infinite} or {@link !NaN `NaN`} values will result in {@link TimeoutSignal.signal signal}
+     * being {@link !undefined `undefined`}.
+     * Finite values will be clamped between `0` and {@link !Number.MAX_SAFE_INTEGER `Number.MAX_SAFE_INTEGER`} inclusive.
      */
     constructor(timeout?: number) {
         if (timeout && isFinite(timeout) && !isNaN(timeout)) {
@@ -79,9 +75,9 @@ export class TimeoutSignal {
 }
 
 /**
- * Type guard for determining whether a given object is an {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal} instance.
+ * Type guard for determining whether a given object is an {@link !AbortSignal AbortSignal} instance.
  * @param {unknown} object The object.
- * @returns {object is AbortSignal} `true` if the object is determined to be an {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal},
+ * @returns {object is AbortSignal} `true` if the object is determined to be an {@link !AbortSignal AbortSignal},
  * otherwise `false`.
  */
 export function isAbortSignal(object: unknown): object is AbortSignal {
@@ -89,8 +85,7 @@ export function isAbortSignal(object: unknown): object is AbortSignal {
 }
 
 /**
- * A helpful interface to allow use of {@link https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal AbortSignal's}
- * {@link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget EventTarget} interface when TypeScript hates us.
+ * A helpful interface to allow use of {@link !AbortSignal AbortSignal's} {@link !EventTarget EventTarget} interface when TypeScript hates us.
  */
 export interface Signal extends AbortSignal {
     /**
