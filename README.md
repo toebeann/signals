@@ -2,7 +2,7 @@
 
 # signals 🚥
 
-A collection of wrappers and utility functions for working with AbortSignals.
+A collection of wrappers and utility functions for working with [AbortSignals](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal).
 
 [![npm package version](https://img.shields.io/npm/v/@toebean/signals.svg?logo=npm&label&labelColor=222&style=flat-square)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![npm package downloads](https://img.shields.io/npm/dw/@toebean/signals.svg?logo=npm&labelColor=222&style=flat-square)](https://npmjs.org/package/@toebean/signals "View signals on npm") [![typedocs](https://img.shields.io/badge/docs-informational.svg?logo=typescript&labelColor=222&style=flat-square)](https://toebeann.github.io/signals "Read the documentation on Github Pages") [![license](https://img.shields.io/github/license/toebeann/signals.svg?color=informational&labelColor=222&style=flat-square)](https://github.com/toebeann/signals/blob/main/LICENSE "View the license on GitHub")
 
@@ -33,7 +33,7 @@ A collection of wrappers and utility functions for working with AbortSignals.
 
 ### [npm](https://www.npmjs.com/package/@toebean/signals "npm is a package manager for JavaScript")
 
-```shell
+```text
 npm i @toebean/signals
 ```
 
@@ -41,7 +41,7 @@ npm i @toebean/signals
 
 ### AggregateSignal
 
-Combines several `AbortSignal` instances into a signal which will be aborted as soon as any of the given signals are.
+Combines several [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) instances into a signal which will be aborted as soon as any of the given signals are.
 
 ```js
 import { AggregateSignal } from "@toebean/signals";
@@ -63,7 +63,7 @@ switch (aggregateSignal.abortedSignal) {
 
 ### TimeoutSignal
 
-Creates an `AbortSignal` which will timeout after a given number of milliseconds. Based on native `timeout`.
+Creates an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) which will timeout after a given number of milliseconds, using [`setTimeout`](https://developer.mozilla.org/en-US/docs/Web/API/setTimeout) under the hood.
 
 ```js
 import { AggregateSignal } from "@toebean/signals";
@@ -92,7 +92,7 @@ if (isAbortSignal(someObject)) {
 
 ### isSignal
 
-A TypeScript type guard for checking whether a given object is an `AbortSignal` _and_ conforms to a minimal `EventTarget` interface. Useful for when TypeScript hates us (i.e. does not yet have support for `AbortSignal`'s `EventTarget` interface).
+A TypeScript type guard for checking whether a given object is an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) _and_ conforms to a minimal [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) interface. Useful for when TypeScript hates us (i.e. does not yet have support for the [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) interface of [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)).
 
 ```ts
 import { isSignal } from "@toebean/signals";
