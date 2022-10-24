@@ -46,6 +46,7 @@
     "@rollup/plugin-node-resolve": "^14.1.0",
     "@tsconfig/node16": "^1.0.3",
     "@types/jest": "^28.1.7",
+    "@types/node": "^18.11.4",
     "@typescript-eslint/eslint-plugin": "^5.33.1",
     "@typescript-eslint/parser": "^5.33.1",
     "@yelo/rollup-node-external": "^1.0.1",
