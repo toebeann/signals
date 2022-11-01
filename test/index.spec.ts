@@ -46,8 +46,15 @@ describe('AggregateSignal', () => {
         const ac = new AbortController();
         const instance = new AggregateSignal(ac.signal);
         const abort = jest.fn();
-        ((<unknown>instance.signal) as Signal).addEventListener('abort', abort);
-        ac.abort();
+
+        beforeEach(() => {
+            instance.signal?.addEventListener('abort', abort);
+            ac.abort();
+        });
+
+        afterEach(() => {
+            instance.signal?.removeEventListener('abort', abort);
+        });
 
         describe('signal', () => {
             it('should be the valid AbortSignal', () => {
@@ -82,8 +89,15 @@ describe('AggregateSignal', () => {
             undefined
         );
         const abort = jest.fn();
-        ((<unknown>instance.signal) as Signal).addEventListener('abort', abort);
-        ac.abort();
+
+        beforeEach(() => {
+            instance.signal?.addEventListener('abort', abort);
+            ac.abort();
+        });
+
+        afterEach(() => {
+            instance.signal?.removeEventListener('abort', abort);
+        });
 
         describe('signal', () => {
             it('should not equal either of the original AbortSignals', () => {
@@ -120,7 +134,14 @@ describe('AggregateSignal', () => {
             undefined
         );
         const abort = jest.fn();
-        ((<unknown>instance.signal) as Signal).addEventListener('abort', abort);
+
+        beforeEach(() => {
+            instance.signal?.addEventListener('abort', abort);
+        });
+
+        afterEach(() => {
+            instance.signal?.removeEventListener('abort', abort);
+        });
 
         describe('signal', () => {
             it('should equal the already aborted AbortSignal', () => {
@@ -202,10 +223,11 @@ describe('TimeoutSignal', () => {
         beforeEach(() => {
             jest.useFakeTimers();
             instance = new TimeoutSignal(1000);
-            ((<unknown>instance.signal) as Signal)?.addEventListener(
-                'abort',
-                abort
-            );
+            instance.signal?.addEventListener('abort', abort);
+        });
+
+        afterEach(() => {
+            instance.signal?.removeEventListener('abort', abort);
         });
 
         describe('signal', () => {
