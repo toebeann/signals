@@ -1,5 +1,6 @@
 {
   "preset": "ts-jest",
+  "injectGlobals": false,
   "testEnvironment": "node",
   "moduleNameMapper": {
     "^(\\.{1,2}/.*)\\.js$": "$1"
