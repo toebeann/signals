@@ -24,7 +24,6 @@ A collection of wrappers and utility functions for working with [AbortSignals](h
     - [AggregateSignal](#aggregatesignal)
     - [TimeoutSignal](#timeoutsignal)
     - [isAbortSignal](#isabortsignal)
-    - [isSignal](#issignal)
   - [API reference](#api-reference)
     - [Quick links](#quick-links)
   - [License](#license)
@@ -90,21 +89,6 @@ if (isAbortSignal(someObject)) {
 }
 ```
 
-### isSignal
-
-A TypeScript type guard for checking whether a given object is an [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal) _and_ conforms to a minimal [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) interface. Useful for when TypeScript hates us (i.e. does not yet have support for the [`EventTarget`](https://developer.mozilla.org/en-US/docs/Web/API/EventTarget) interface of [`AbortSignal`](https://developer.mozilla.org/en-US/docs/Web/API/AbortSignal)).
-
-```ts
-import { isSignal } from "@toebean/signals";
-
-if (isSignal(someObject)) {
-  // within this block, someObject is typed as a Signal (which extends AbortSignal)
-  someObject.addEventListener("abort", () => {
-    // ...
-  });
-}
-```
-
 ## API reference
 
 The full API reference for signals is [available on GitHub Pages](https://toebeann.github.io/signals).
@@ -114,8 +98,6 @@ The full API reference for signals is [available on GitHub Pages](https://toebea
 - [AggregateSignal](https://toebeann.github.io/signals/stable/classes/AggregateSignal.html)
 - [TimeoutSignal](https://toebeann.github.io/signals/stable/classes/TimeoutSignal.html)
 - [isAbortSignal](https://toebeann.github.io/signals/stable/functions/isAbortSignal.html)
-- [isSignal](https://toebeann.github.io/signals/stable/functions/isSignal.html)
-- [Signal](https://toebeann.github.io/signals/stable/interfaces/Signal.html)
 
 ## License
 
