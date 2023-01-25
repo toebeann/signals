@@ -21,7 +21,7 @@ export class AggregateSignal {
      * @param {(AbortSignal | undefined)[]} abortSignals The {@link !AbortSignal AbortSignals} to aggregate.
      */
     constructor(...abortSignals: (AbortSignal | undefined)[]) {
-        const signals = abortSignals.filter(isSignal);
+        const signals = abortSignals.filter(isAbortSignal);
 
         if (signals.length === 1) {
             this.abortedSignal = this.signal = signals[0];
@@ -34,14 +34,16 @@ export class AggregateSignal {
             this.signal = ac.signal;
 
             for (const signal of signals) {
-                signal.addEventListener('abort', () => {
+                const listener = () => {
                     for (const signal of signals) {
-                        signal.removeEventListener('abort');
+                        signal.removeEventListener('abort', listener);
                     }
 
                     this.abortedSignal = signal;
                     ac.abort();
-                });
+                };
+
+                signal.addEventListener('abort', listener);
             }
         }
     }
@@ -82,38 +84,4 @@ export class TimeoutSignal {
  */
 export function isAbortSignal(object: unknown): object is AbortSignal {
     return object instanceof AbortSignal;
-}
-
-/**
- * A helpful interface to allow use of {@link !AbortSignal AbortSignal's} {@link !EventTarget EventTarget} interface when TypeScript hates us.
- */
-export interface Signal extends AbortSignal {
-    /**
-     * Adds a listener to a named event.
-     * @param {'abort'} event Name of the event.
-     * @param {(this: Signal, event: Event) => void} listener The listener.
-     */
-    addEventListener: (
-        event: 'abort',
-        listener: (this: Signal, event: Event) => void
-    ) => void;
-    /** Removes a listener from a named event.
-     * @param {'abort'} event Name of the event.
-     */
-    removeEventListener: (event: 'abort') => void;
-}
-
-/**
- * Type guard for determining whether a given object conforms to the {@link Signal} interface.
- * @param {unknown} object The object.
- * @returns {object is Signal} `true` if the object conforms to the {@link Signal} interface, otherwise `false`.
- */
-export function isSignal(object: unknown): object is Signal {
-    return (
-        isAbortSignal(object) &&
-        'addEventListener' in object &&
-        'removeEventListener' in object &&
-        typeof (<Signal>object).addEventListener === 'function' &&
-        typeof (<Signal>object).removeEventListener === 'function'
-    );
 }
