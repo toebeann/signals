@@ -7,13 +7,7 @@ import {
     jest,
 } from '@jest/globals';
 
-import {
-    AggregateSignal,
-    TimeoutSignal,
-    Signal,
-    isSignal,
-    isAbortSignal,
-} from '../src/index';
+import { AggregateSignal, TimeoutSignal, isAbortSignal } from '../src/index';
 
 describe('AggregateSignal', () => {
     describe('when no signals passed', () => {
@@ -62,8 +56,8 @@ describe('AggregateSignal', () => {
                 expect(instance.signal).toBe(ac.signal);
             });
 
-            it('should implement the EventTarget interface', () => {
-                expect(isSignal(instance.signal)).toEqual(true);
+            it('should be an AbortSignal instance', () => {
+                expect(isAbortSignal(instance.signal)).toEqual(true);
             });
 
             it('should be aborted when the input AbortSignal aborts', () => {
@@ -106,8 +100,8 @@ describe('AggregateSignal', () => {
                 expect(instance.signal).not.toBeUndefined();
             });
 
-            it('should implement the EventTarget interface', () => {
-                expect(isSignal(instance.signal)).toEqual(true);
+            it('should be an AbortSignal instance', () => {
+                expect(isAbortSignal(instance.signal)).toEqual(true);
             });
 
             it('should be aborted when either AbortSignals abort', () => {
@@ -150,8 +144,8 @@ describe('AggregateSignal', () => {
                 expect(instance.signal).not.toBeUndefined();
             });
 
-            it('should implement the EventTarget interface', () => {
-                expect(isSignal(instance.signal)).toEqual(true);
+            it('should be an AbortSignal instance', () => {
+                expect(isAbortSignal(instance.signal)).toEqual(true);
             });
 
             it('should immediately register as aborted', () => {
@@ -256,57 +250,11 @@ describe('TimeoutSignal', () => {
         });
 
         afterEach(() => {
-            ((<unknown>instance.signal) as Signal)?.removeEventListener(
-                'abort'
+            ((<unknown>instance.signal) as AbortSignal)?.removeEventListener(
+                'abort',
+                abort
             );
             jest.useRealTimers();
-        });
-    });
-});
-
-describe('isSignal(object: unknown): object is Signal', () => {
-    let object: unknown;
-
-    describe('when object: instanceof AbortSignal', () => {
-        beforeEach(() => {
-            object = new AbortController().signal;
-        });
-        it('should return: true', () => {
-            expect(isSignal(object)).toEqual(true);
-        });
-    });
-
-    describe('when object: undefined', () => {
-        beforeEach(() => (object = undefined));
-        it('should return: false', () => {
-            expect(isSignal(object)).toEqual(false);
-        });
-    });
-
-    describe('when object: null', () => {
-        beforeEach(() => {
-            object = null;
-        });
-        it('should return: false', () => {
-            expect(isSignal(object)).toEqual(false);
-        });
-    });
-
-    describe('when object: instanceof TypeError', () => {
-        beforeEach(() => {
-            object = new TypeError();
-        });
-        it('should return: true', () => {
-            expect(isSignal(object)).toEqual(false);
-        });
-    });
-
-    describe("when object: { name: 'Foo', message: 'Bar' }", () => {
-        beforeEach(() => {
-            object = { name: 'Foo', message: 'Bar' };
-        });
-        it('should return: false', () => {
-            expect(isSignal(object)).toEqual(false);
         });
     });
 });
